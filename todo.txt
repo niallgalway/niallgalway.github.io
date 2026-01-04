@@ -1,4 +1,6 @@
 Donation Page
+Press Release Section
+Logo too small
 Register to Vote QR Code
 Publish
 Hostname
