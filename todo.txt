@@ -1,0 +1,6 @@
+Donation Page
+Register to Vote QR Code
+Publish
+Hostname
+CloudFlare
+Notes for future maintainers

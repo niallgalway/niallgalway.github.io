@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galway Green Party</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <style>
+  :root {
+    /* Brand palette */
+    --evergreen: #2fb56a;
+    --emerald: #0f8066;
+    --black: #000000;
+    --dark-grey: #403f3b;
+    --light-grey: #e7e7e5;
+    --white: #ffffff;
+
+    /* Layout + UI */
+    --radius: 18px;
+    --radius-sm: 12px;
+    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    --shadow-soft: 0 6px 18px rgba(0,0,0,.06);
+    --border: 1px solid rgba(64,63,59,.14);
+
+    /* Typography */
+    --font-sans: "Klima", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+    /* Spacing rhythm */
+    --section-y: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--dark-grey);
+    line-height: 1.55;
+    letter-spacing: 0.1px;
+  }
+
+  /* Headings: black/emerald on light background per brand */
+  h1, h2, h3, h4, h5 {
+    color: var(--black);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    color: var(--dark-grey);
+    font-weight: 400;
+  }
+
+  /* Navbar: clean, high trust */
+  .navbar {
+    background: rgba(255,255,255,.92) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: var(--border);
+  }
+
+  .navbar-brand {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    color: var(--emerald) !important;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .navbar-brand img {
+    height: 44px;
+    width: auto;
+  }
+
+  @media (max-width: 576px) {
+    .navbar-brand img { height: 36px; }
+  }
+
+  .navbar .nav-link {
+    color: var(--dark-grey) !important;
+    font-weight: 700;
+    padding: .5rem .85rem;
+    border-radius: 999px;
+  }
+
+  .navbar .nav-link:hover,
+  .navbar .nav-link:focus-visible {
+    color: var(--emerald) !important;
+    background: rgba(47,181,106,.10);
+    outline: none;
+  }
+
+  /* Sections */
+  section { padding: var(--section-y) 0; }
+
+  .centered-content { max-width: 1040px; }
+
+  /* Hero: brand overlay, less nightclub, more credible */
+  .hero-section {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background:
+      linear-gradient(180deg, rgba(15,128,102,.78), rgba(15,128,102,.55)),
+      url('assets/images/trees.avif') no-repeat center / cover;
+    position: relative;
+  }
+
+  .hero-section h1 {
+    color: var(--white);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .hero-section .lead {
+    color: rgba(255,255,255,.92);
+    max-width: 62ch;
+    margin: 0.75rem auto 0;
+  }
+
+  /* Buttons: Evergreen for primary actions, Emerald for dark */
+  .btn {
+    border-radius: 999px;
+    padding: .85rem 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary {
+    background: var(--evergreen) !important;
+    border: 2px solid var(--evergreen) !important;
+    color: var(--black) !important; /* better readability than white on evergreen */
+  }
+
+  .btn-primary:hover {
+    background: transparent !important;
+    color: var(--white) !important;
+    border-color: rgba(255,255,255,.8) !important;
+  }
+
+  .btn-light {
+    background: var(--white) !important;
+    border: 2px solid var(--white) !important;
+    color: var(--emerald) !important;
+  }
+
+  .btn-light:hover {
+    background: transparent !important;
+    color: var(--white) !important;
+    border-color: rgba(255,255,255,.8) !important;
+  }
+
+  .btn-dark {
+    background: var(--emerald) !important;
+    border: 2px solid var(--emerald) !important;
+    color: var(--white) !important;
+  }
+
+  .btn-dark:hover {
+    background: transparent !important;
+    color: var(--emerald) !important;
+    border-color: var(--emerald) !important;
+  }
+
+  /* Divider: stop using rainbow gradients; use whitespace + a subtle rule */
+  .spacer-divider {
+    margin: clamp(2.5rem, 5vw, 4rem) 0;
+    height: 1px;
+    background: rgba(64,63,59,.18);
+    border: none;
+  }
+
+  /* “What we do” section: Emerald background, evergreen highlights */
+  .bg-soft-pink { /* repurpose your class name to avoid markup churn */
+    background: var(--emerald) !important;
+    color: var(--white);
+  }
+
+  .bg-soft-pink h2,
+  .bg-soft-pink .lead {
+    color: var(--white);
+  }
+
+  .check-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    text-align: left;
+    padding-top: 2rem;
+  }
+
+  .check-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: .65rem;
+    padding: 1rem 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    font-size: 1.05rem;
+  }
+
+  .check-list-item i {
+    color: var(--evergreen);
+    margin-top: .15rem;
+    font-size: 1.1rem;
+  }
+
+  /* Cards: calmer, more whitespace, less “hover zoom” */
+  .card {
+    border: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 260px;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    margin: 0;
+    font-weight: 800;
+    color: var(--black);
+  }
+
+  /* How section: Emerald overlay, simpler */
+  .how-section {
+    background:
+      linear-gradient(180deg, rgba(15,128,102,.82), rgba(15,128,102,.62)),
+      url('assets/images/coolcat.jpg') center / cover no-repeat;
+    color: var(--white);
+  }
+
+  .how-section h2 { color: var(--white); }
+  .how-section .lead { color: rgba(255,255,255,.92); }
+
+  .how-section ul li {
+    max-width: 70ch;
+    margin: .45rem auto;
+  }
+
+  /* Events section: light grey panels */
+  #events {
+    background: var(--light-grey);
+  }
+
+  #events .my-4 {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-soft);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #events h5 {
+    color: var(--black);
+    font-weight: 800;
+    margin-bottom: .35rem;
+  }
+
+  /* Contact + footer */
+  #contact {
+    background: var(--white);
+  }
+
+  footer {
+    background: var(--light-grey) !important;
+    border-top: var(--border);
+    color: var(--dark-grey);
+  }
+
+  /* Better focus visibility */
+  :focus-visible {
+    outline: 3px solid rgba(47,181,106,.55);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+</style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#home" aria-label="Galway Green Party home">
+        <img src="assets/logos/Green_Party-Logo_Land-Col-Rev-EN_IR.svg" alt="Galway Green Party logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Local impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#press">Press</a></li>
+          <li class="nav-item"><a class="nav-link" href="#representatives">Representatives</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vote">Register to vote</a></li>
+          <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contribute">Contribute</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div class="container centered-content">
+      <h1 class="display-4 fw-bold">Green Party Galway</h1>
+      <p class="lead mt-3">
+        Working for a sustainable, just, and prosperous future for Galway and Ireland.
+      </p>
+
+      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mt-4">
+        <a href="#vote" class="btn btn-light btn-lg">Register to vote</a>
+        <a href="#membership" class="btn btn-primary btn-lg">Join the party</a>
+        <a href="#press" class="btn btn-dark btn-lg">Press releases</a>
+      </div>
+
+      <p class="mt-4 small" style="opacity:.9;">
+        The Galway Greens group covers both city and county and usually meet on the first Monday of the month.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">About Us</h2>
+      <p class="lead">
+        For over four decades, the Green Party in Galway has been at the forefront of environmental advocacy and progressive politics,
+        working tirelessly to create a sustainable and just future for all.
+      </p>
+
+      <div class="check-list mt-4">
+        <div class="check-list-item"><i class="bi bi-check-circle-fill"></i><span><strong>Environmental Protection</strong><br>Safeguarding Galway's natural beauty and biodiversity for future generations through sustainable policies and practices.</span></div>
+        <div class="check-list-item"><i class="bi bi-check-circle-fill"></i><span><strong>Social Justice</strong><br>Building an inclusive society where everyone has equal opportunities and access to essential services in Galway.</span></div>
+        <div class="check-list-item"><i class="bi bi-check-circle-fill"></i><span><strong>Sustainable Development</strong><br>Promoting economic growth that respects environmental limits and supports long-term community wellbeing.</span></div>
+        <div class="check-list-item"><i class="bi bi-check-circle-fill"></i><span><strong>Community Care</strong><br>Fostering strong, resilient communities through participatory democracy and local empowerment initiatives.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL IMPACT -->
+  <section id="impact" class="py-5 bg-light">
+    <div class="container centered-content">
+      <div class="text-center">
+        <h2 class="section-heading">Our local impact</h2>
+        <p class="lead">
+          As representatives of Galway's diverse communities, we have successfully championed environmental protection measures,
+          sustainable transport initiatives, and social justice policies that benefit all residents.
+        </p>
+        <p class="lead">
+          From protecting our coastlines and waterways to advocating for renewable energy projects and sustainable housing developments,
+          our work directly impacts the daily lives of Galway citizens.
+        </p>
+        <p class="lead mb-0">
+          We believe that environmental sustainability and social equity go hand in hand, and our policies reflect this integrated approach to governance.
+        </p>
+      </div>
+
+      <hr class="spacer-divider">
+
+      <div class="row g-4 text-start">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Local councils</h5>
+              <p class="mt-2 mb-0">
+                Green Party representatives serve on Galway City and County Councils, advocating for sustainable development and environmental protection.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">National representation</h5>
+              <p class="mt-2 mb-0">
+                Our TDs and Senators bring Galway's voice to the national stage, ensuring our region's needs are heard in the Oireachtas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="press" class="py-5">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">Latest news &amp; press releases</h2>
+      <p class="lead">
+        Statements, submissions, and local updates from Galway Greens.
+      </p>
+
+      <div class="row g-4 text-start mt-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Niall Murphy to run in the Galway West Bye-Election</h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="http://www.galwaygreens.ie/docs/to-run.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">What Does the Ring Road Submission Say?</h5>
+              <p class="mt-2 mb-3">Submission summary (PDF)</p>
+              <a href="http://www.galwaygreens.ie/docs/rr1.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Corrib Causeway plans need to consider dyke condition</h5>
+              <p class="mt-2 mb-3">Flood risk &amp; planning (PDF)</p>
+              <a href="http://www.galwaygreens.ie/docs/dykerd.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="#contact" class="btn btn-dark">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPRESENTATIVES -->
+  <section id="representatives" class="py-5 bg-soft-pink text-center">
+    <div class="container">
+      <h2 class="section-heading">Our representatives</h2>
+      <p class="lead mb-5">
+        Contact your local Greens — city and county.
+      </p>
+
+      <div class="row g-4 text-start">
+        <!-- Niall -->
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="assets/images/niall.avif" class="card-img-top" alt="Niall Murphy">
+            <div class="card-body">
+              <h5 class="card-title">Niall Murphy</h5>
+              <p class="mb-2">Galway City West</p>
+              <p class="small mb-3">
+                <strong>Email:</strong> <a href="mailto:niall.murphy@greenparty.ie">niall.murphy@greenparty.ie</a><br>
+                <strong>Phone:</strong> 086 8399996<br>
+                <strong>Facebook:</strong> <a href="https://www.facebook.com/niallgalway" target="_blank" rel="noopener">niallgalway</a><br>
+                <strong>Twitter/X:</strong> <a href="https://twitter.com/niallgalway" target="_blank" rel="noopener">@niallgalway</a><br>
+                <strong>Instagram:</strong> <a href="https://www.instagram.com/niallgalway/" target="_blank" rel="noopener">niallgalway</a>
+              </p>
+              <div class="d-grid gap-2">
+                <a href="#candidate" class="btn btn-primary btn-sm">Candidate profile</a>
+                <a href="https://gofund.me/08a33d7e" class="btn btn-dark btn-sm" target="_blank" rel="noopener">Donate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alastair -->
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="assets/images/alastair.avif" class="card-img-top" alt="Alastair McKinstry">
+            <div class="card-body">
+              <h5 class="card-title">Alastair McKinstry</h5>
+              <p class="mb-2">Connemara South</p>
+              <p class="small mb-3">
+                <strong>Email:</strong> <a href="mailto:Alastair.McKinstry@galwaygreens.ie">Alastair.McKinstry@galwaygreens.ie</a><br>
+                <strong>Phone:</strong> 087 6847928<br>
+                <strong>Facebook:</strong> <a href="https://www.facebook.com/alastair.mckinstry" target="_blank" rel="noopener">alastair.mckinstry</a><br>
+                <strong>Twitter/X:</strong> <a href="https://twitter.com/amckinstry" target="_blank" rel="noopener">@amckinstry</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eoin -->
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="assets/images/eoin.avif" class="card-img-top" alt="Eoin Madden">
+            <div class="card-body">
+              <h5 class="card-title">Eoin Madden</h5>
+              <p class="mb-2">Athenry–Oranmore</p>
+              <p class="small mb-3">
+                <strong>Email:</strong> <a href="mailto:eoin.madden@galwaygreens.ie">eoin.madden@galwaygreens.ie</a><br>
+                <strong>Phone:</strong> 086 6794008<br>
+                <strong>Facebook:</strong> <a href="https://www.facebook.com/VoteEoinMadden" target="_blank" rel="noopener">VoteEoinMadden</a><br>
+                <strong>Twitter/X:</strong> <a href="https://twitter.com/eoinmadden" target="_blank" rel="noopener">@eoinmadden</a><br>
+                <strong>Instagram:</strong> <a href="https://www.instagram.com/voteeoinmadden/" target="_blank" rel="noopener">voteeoinmadden</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Megan -->
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="assets/images/megan.avif" class="card-img-top" alt="Megan Flynn Dixon">
+            <div class="card-body">
+              <h5 class="card-title">Megan Flynn Dixon</h5>
+              <p class="mb-2">Gort–Kinvara</p>
+              <p class="small mb-3">
+                <strong>Email:</strong> <a href="mailto:megan.flynndixon@greenparty.ie">megan.flynndixon@greenparty.ie</a><br>
+                <strong>Twitter/X:</strong> <a href="https://twitter.com/MeganFlynnDixon" target="_blank" rel="noopener">@MeganFlynnDixon</a><br>
+                <strong>Instagram:</strong> <a href="https://www.instagram.com/megan.flynn.dixon/#" target="_blank" rel="noopener">megan.flynn.dixon</a>
+              </p>
+              <a href="https://www.idonate.ie/crowdfunder/MeganFlynnDixon" class="btn btn-dark btn-sm w-100" target="_blank" rel="noopener">Donate</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER TO VOTE (expanded but aligned with official copy) -->
+  <section id="vote" class="py-5">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">Register to vote</h2>
+      <p class="lead">
+        Check if you are already registered — or register online in minutes.
+      </p>
+
+      <div class="row g-4 text-start mt-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Check the Register</h5>
+              <p class="mt-2 mb-3">
+                Check if you're registered to vote and/or go ahead and register here
+              </p>
+              <a class="btn btn-primary btn-sm" href="http://www.checktheregister.ie" target="_blank" rel="noopener">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Who can vote?</h5>
+              <p class="mt-2 mb-0">
+                All adult residents in Ireland can vote in local elections. 16/17 year olds can pre-register.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Need help?</h5>
+              <p class="mt-2 mb-3">
+                If you’re unsure what you need, email us and we’ll point you to the right info.
+              </p>
+              <a class="btn btn-dark btn-sm" href="mailto:galway@greenparty.ie">Email Galway Greens</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership" class="py-5 bg-light">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">Membership</h2>
+      <p class="lead">
+        If you're interested in joining the Green Party, you can register
+        as a national member with the below link. You'll be added to the Galway Green Party mailing
+        list and can come along and join our next meeting. But don't hesitate to email us directly at
+        <a href="mailto:galway@greenparty.ie">galway@greenparty.ie</a>.
+      </p>
+      <a href="https://my.greenparty.ie" class="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener">Join the Green Party</a>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTIONS -->
+  <section id="contribute" class="py-5">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">Financial contribution</h2>
+      <p class="lead">
+        Help us to fund election campaigns. You can make a contribution to the Galway Greens,
+        or donate to individual candidates using the links above.
+      </p>
+      <a href="http://www.galwaygreens.ie/Contribute.html" class="btn btn-dark btn-lg mt-3" target="_blank" rel="noopener">Make a contribution</a>
+    </div>
+  </section>
+
+  <!-- CANDIDATE DETAIL (section now; can become its own page later) -->
+  <section id="candidate" class="py-5 bg-light">
+    <div class="container centered-content">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5">
+          <div class="card">
+            <img src="assets/images/niall_wide.avif" class="card-img-top" alt="Niall Murphy">
+            <div class="card-body">
+              <h3 class="card-title mb-1">Niall Murphy</h3>
+              <p class="mb-3">Galway City West</p>
+              <div class="d-grid gap-2">
+                <a href="mailto:niall.murphy@greenparty.ie" class="btn btn-primary">Email</a>
+                <a href="https://gofund.me/08a33d7e" class="btn btn-dark" target="_blank" rel="noopener">Donate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <h2 class="section-heading">Bye-Election Candidate Niall Murphy</h2>
+          <p class="lead">
+            I have worked as a software engineer for multinationals and medical device companies in Galway for the past thirty years. I currently work for Cisco Systems. 
+
+            I live in Salthill with my wife Una. Our three children are in their early twenties now, and I see all the life challenges faced by a new generation.
+
+            From 2020 to 2024 I served as a Galway City Councillor and as a board member of Leisureland and on the board of the University of Galway.
+
+            Outside of politics I am a runner and swimmer, and I have organised many cycling and running events in the city. Ten years as a hurling coach for underage teams has given me insight into the sports infrastructure needs for Galway.
+          </p>
+
+          <!-- <hr class="spacer-divider">
+
+          <h3 class="mb-3">Featured press release</h3>
+          <p class="mb-3">
+            <a href="http://www.galwaygreens.ie/docs/to-run.pdf" target="_blank" rel="noopener">
+              Niall Murphy to run in the Galway West Bye-Election (PDF)
+            </a>
+          </p> -->
+
+          <p class="mb-0">
+            Next iteration: add “Key priorities” bullets and a short “Track record” list from the candidate’s approved copy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (no form) -->
+  <section id="contact" class="py-5 text-center">
+    <div class="container centered-content">
+      <h2 class="mb-3">Contact</h2>
+      <p class="lead mb-4">
+        Have questions about our policies? Want to get involved? We’d love to hear from you.
+      </p>
+
+      <div class="row g-4 text-start">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Email</h5>
+              <p class="mt-2 mb-0"><a href="mailto:galway@greenparty.ie">galway@greenparty.ie</a></p>
+              <p class="mt-2 mb-0"><a href="mailto:press@galwaygreens.ie">press@galwaygreens.ie</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Follow</h5>
+              <p class="mt-2 mb-0">
+                <a href="https://www.facebook.com/GalwayGreenPartyComhaontasGlasNaGaillimhe" target="_blank" rel="noopener">Facebook</a><br>
+                <a href="https://twitter.com/galwaygreens" target="_blank" rel="noopener">Twitter/X</a><br>
+                <a href="https://www.instagram.com/galwaygreenparty/" target="_blank" rel="noopener">Instagram</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="text-center py-3 bg-light">
+    <small>&copy; 2026 Galway Green Party. All rights reserved.</small>
+  </footer>
+</body>
+
+</html>
