@@ -6,8 +6,9 @@
   <title>Galway Green Party</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <link rel="icon" href="assets/favicon.ico">
+
   <style>
   :root {
     /* Brand palette */
@@ -135,10 +136,11 @@
     color: var(--black) !important; /* better readability than white on evergreen */
   }
 
-  .btn-primary:hover {
-    background: transparent !important;
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--emerald) !important;
+    border-color: var(--emerald) !important;
     color: var(--white) !important;
-    border-color: rgba(255,255,255,.8) !important;
   }
 
   .btn-light {
@@ -310,13 +312,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#impact">Local impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
           <li class="nav-item"><a class="nav-link" href="#press">Press</a></li>
           <li class="nav-item"><a class="nav-link" href="#representatives">Representatives</a></li>
           <li class="nav-item"><a class="nav-link" href="#vote">Register to vote</a></li>
           <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li>
           <li class="nav-item"><a class="nav-link" href="#contribute">Contribute</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
         </ul>
       </div>
     </div>
@@ -360,11 +362,11 @@
     </div>
   </section>
 
-  <!-- LOCAL IMPACT -->
+  <!-- IMPACT -->
   <section id="impact" class="py-5 bg-light">
     <div class="container centered-content">
       <div class="text-center">
-        <h2 class="section-heading">Our local impact</h2>
+        <h2 class="section-heading">Our impact</h2>
         <p class="lead">
           As representatives of Galway's diverse communities, we have successfully championed environmental protection measures,
           sustainable transport initiatives, and social justice policies that benefit all residents.
@@ -386,7 +388,7 @@
             <div class="card-body">
               <h5 class="card-title">Local councils</h5>
               <p class="mt-2 mb-0">
-                Green Party representatives serve on Galway City and County Councils, advocating for sustainable development and environmental protection.
+                Green Party representatives have served on Galway City and County Councils, advocating for sustainable development and environmental protection.
               </p>
             </div>
           </div>
@@ -420,7 +422,7 @@
             <div class="card-body">
               <h5 class="card-title">Niall Murphy to run in the Galway West Bye-Election</h5>
               <p class="mt-2 mb-3">Press release (PDF)</p>
-              <a href="http://www.galwaygreens.ie/docs/to-run.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+              <a href="assets/pdfs/to-run.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
             </div>
           </div>
         </div>
@@ -430,7 +432,7 @@
             <div class="card-body">
               <h5 class="card-title">What Does the Ring Road Submission Say?</h5>
               <p class="mt-2 mb-3">Submission summary (PDF)</p>
-              <a href="http://www.galwaygreens.ie/docs/rr1.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+              <a href="assets/pdfs/rr1.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
             </div>
           </div>
         </div>
@@ -440,14 +442,14 @@
             <div class="card-body">
               <h5 class="card-title">Corrib Causeway plans need to consider dyke condition</h5>
               <p class="mt-2 mb-3">Flood risk &amp; planning (PDF)</p>
-              <a href="http://www.galwaygreens.ie/docs/dykerd.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
+              <a href="assets/pdfs/dykerd.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View PDF</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="mt-4">
-        <a href="#contact" class="btn btn-dark">Get in touch</a>
+        <a href="mailto:galway@greenparty.ie" class="btn btn-dark">Get in touch</a>
       </div>
     </div>
   </section>
@@ -469,15 +471,15 @@
               <h5 class="card-title">Niall Murphy</h5>
               <p class="mb-2">Galway City West</p>
               <p class="small mb-3">
-                <strong>Email:</strong> <a href="mailto:niall.murphy@greenparty.ie">niall.murphy@greenparty.ie</a><br>
+                <strong>Email:</strong> <a href="mailto:niall.murphy@galwaygreens.ie">niall.murphy@galwaygreens.ie</a><br>
                 <strong>Phone:</strong> 086 8399996<br>
                 <strong>Facebook:</strong> <a href="https://www.facebook.com/niallgalway" target="_blank" rel="noopener">niallgalway</a><br>
-                <strong>Twitter/X:</strong> <a href="https://twitter.com/niallgalway" target="_blank" rel="noopener">@niallgalway</a><br>
+                <strong>Bluesky:</strong> <a href="https://bsky.app/profile/niallgalway.bsky.social" target="_blank" rel="noopener">@niallgalway</a><br>
                 <strong>Instagram:</strong> <a href="https://www.instagram.com/niallgalway/" target="_blank" rel="noopener">niallgalway</a>
               </p>
               <div class="d-grid gap-2">
                 <a href="#candidate" class="btn btn-primary btn-sm">Candidate profile</a>
-                <a href="https://gofund.me/08a33d7e" class="btn btn-dark btn-sm" target="_blank" rel="noopener">Donate</a>
+                <a href="https://gofund.me/c194e26eb" class="btn btn-dark btn-sm" target="_blank" rel="noopener">Donate</a>
               </div>
             </div>
           </div>
@@ -555,7 +557,7 @@
               <p class="mt-2 mb-3">
                 Check if you're registered to vote and/or go ahead and register here
               </p>
-              <a class="btn btn-primary btn-sm" href="http://www.checktheregister.ie" target="_blank" rel="noopener">Open</a>
+              <a class="btn btn-primary btn-sm" href="http://www.checktheregister.ie" target="_blank" rel="noopener">The Register</a>
             </div>
           </div>
         </div>
@@ -608,7 +610,7 @@
         Help us to fund election campaigns. You can make a contribution to the Galway Greens,
         or donate to individual candidates using the links above.
       </p>
-      <a href="http://www.galwaygreens.ie/Contribute.html" class="btn btn-dark btn-lg mt-3" target="_blank" rel="noopener">Make a contribution</a>
+      <a href="contribute.html" class="btn btn-dark btn-lg mt-3" target="_blank" rel="noopener">Make a contribution</a>
     </div>
   </section>
 
@@ -623,8 +625,8 @@
               <h3 class="card-title mb-1">Niall Murphy</h3>
               <p class="mb-3">Galway City West</p>
               <div class="d-grid gap-2">
-                <a href="mailto:niall.murphy@greenparty.ie" class="btn btn-primary">Email</a>
-                <a href="https://gofund.me/08a33d7e" class="btn btn-dark" target="_blank" rel="noopener">Donate</a>
+                <a href="mailto:niall.murphy@galwaygreens.ie" class="btn btn-primary">Email</a>
+                <a href="https://gofund.me/c194e26eb" class="btn btn-dark" target="_blank" rel="noopener">Donate</a>
               </div>
             </div>
           </div>
@@ -651,16 +653,16 @@
             </a>
           </p> -->
 
-          <p class="mb-0">
+<!--           <p class="mb-0">
             Next iteration: add “Key priorities” bullets and a short “Track record” list from the candidate’s approved copy.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT (no form) -->
-  <section id="contact" class="py-5 text-center">
+  <!-- CONTACT (commenting out for now as no one in charge of social media and press email not monitored) -->
+  <!-- <section id="contact" class="py-5 text-center">
     <div class="container centered-content">
       <h2 class="mb-3">Contact</h2>
       <p class="lead mb-4">
@@ -693,7 +695,7 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
 
   <footer class="text-center py-3 bg-light">
     <small>&copy; 2026 Galway Green Party. All rights reserved.</small>
