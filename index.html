@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
   <link rel="icon" href="assets/favicon.ico">
+  <!-- Google Analytics tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P10VC7V4ZK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P10VC7V4ZK');
+  </script>
 
   <style>
   :root {
@@ -793,6 +802,18 @@
   <footer class="text-center py-3 bg-light">
     <small>&copy; 2026 Galway Green Party. All rights reserved.</small>
   </footer>
+  <script>
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+      if (link.href && link.href.endsWith('.pdf')) {
+        gtag('event', 'press_download', {
+          'event_category': 'Press',
+          'event_label': link.getAttribute('href')
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
