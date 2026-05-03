@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote Niall Murphy No. 1 - Galway West Bye-Election</title>
+  <meta name="description" content="Vote Niall Murphy No. 1 for a better Galway. Fighting for public transport, cost of living relief, and stronger communities.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Analytics tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEEFWG8P5D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PEEFWG8P5D');
+  </script>
+
+  <style>
+  :root {
+    /* Brand palette */
+    --evergreen: #2fb56a;
+    --emerald: #0f8066;
+    --black: #000000;
+    --dark-grey: #403f3b;
+    --light-grey: #e7e7e5;
+    --white: #ffffff;
+
+    /* Layout */
+    --radius: 18px;
+    --radius-sm: 12px;
+    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    --shadow-soft: 0 6px 18px rgba(0,0,0,.06);
+    --border: 1px solid rgba(64,63,59,.14);
+
+    /* Typography */
+    --font-sans: "Klima", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--dark-grey);
+    line-height: 1.55;
+    letter-spacing: 0.1px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: var(--black);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    color: var(--dark-grey);
+    font-weight: 400;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(
+        rgba(0,0,0,0.62),
+        rgba(0,0,0,0.62)
+      ),
+      url("assets/images/fullpartysupport.jpeg") center/cover no-repeat;
+    min-height: 90vh;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    .hero-section {
+      background: linear-gradient(
+          rgba(0,0,0,0.65),
+          rgba(0,0,0,0.65)
+        ),
+        url("assets/images/trees.avif") center/cover no-repeat;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .hero-poster {
+      max-height: 660px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .hero-poster-wrapper {
+      transform: translateX(-140px);
+    }
+    .hero-section .col-lg-6:last-child {
+      transform: translateX(60px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-poster-wrapper {
+      display: none;
+    }
+  }
+
+  .hero-poster {
+    max-height: 620px;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .hero-poster-wrapper {
+    display: inline-block;
+    background: white;
+    padding: 1px;
+    border-radius: 4px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hero-poster-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+  }
+
+  .hero-section h1 {
+    color: var(--white);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .hero-title {
+    text-shadow:
+      0 4px 6px rgba(0,0,0,0.8),
+      0 8px 14px rgba(0,0,0,0.6);
+  }
+
+  .hero-section .lead {
+    color: rgba(255,255,255,.92);
+    max-width: 62ch;
+    margin: 0.75rem auto 0;
+  }
+
+  /* Buttons */
+  .btn {
+    border-radius: 999px;
+    padding: .9rem 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    transition: all .2s ease;
+  }
+
+  .btn-primary {
+    background: var(--evergreen) !important;
+    border: 2px solid var(--evergreen) !important;
+    color: var(--black) !important;
+  }
+
+  .btn-primary:hover {
+    background: var(--white) !important;
+    border-color: var(--white) !important;
+    color: var(--emerald) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-light {
+    background: var(--white) !important;
+    border: 2px solid var(--white) !important;
+    color: var(--emerald) !important;
+  }
+
+  .btn-light:hover {
+    background: transparent !important;
+    color: var(--white) !important;
+    border-color: rgba(255,255,255,.9) !important;
+  }
+
+  .btn-dark {
+    background: var(--emerald) !important;
+    border: 2px solid var(--emerald) !important;
+    color: var(--white) !important;
+  }
+
+  .btn-dark:hover {
+    background: var(--black) !important;
+    border-color: var(--black) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Sections */
+  section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+  }
+
+  .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Priority Cards */
+  .priority-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    height: 100%;
+    box-shadow: var(--shadow-soft);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .priority-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .priority-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--evergreen);
+    color: var(--black);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .priority-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* About Section */
+  .about-section {
+    background: var(--light-grey);
+  }
+
+  .profile-image {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: auto;
+  }
+
+  /* Key Points */
+  .key-points {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(47,181,106,.08);
+    border-left: 4px solid var(--evergreen);
+    border-radius: var(--radius-sm);
+  }
+
+  .key-point i {
+    color: var(--emerald);
+    font-size: 1.25rem;
+    margin-top: .15rem;
+  }
+
+  /* Social Links */
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .65rem 1.15rem;
+    background: var(--white);
+    border: 2px solid var(--emerald);
+    border-radius: 999px;
+    color: var(--emerald);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all .2s ease;
+  }
+
+  .social-link:hover {
+    background: var(--emerald);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .social-link i {
+    font-size: 1.1rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--emerald);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--light-grey);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: var(--border);
+  }
+
+  footer a {
+    color: var(--emerald);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div class="container centered-content">
+      <div class="row align-items-center mt-4">
+
+        <!-- Poster -->
+        <div class="col-lg-6 text-center mb-4 mb-lg-0">
+          <div class="hero-poster-wrapper">
+            <img src="assets/images/poster.jpeg"
+                 class="img-fluid hero-poster"
+                 alt="Niall Murphy campaign poster">
+          </div>
+        </div>
+
+        <!-- Quote + Buttons -->
+        <div class="col-lg-6 text-center">
+
+          <h1 class="display-2 fw-bold hero-title text-center">VÓTÁIL 1 Murphy</h1>
+
+          <p class="lead hero-title" style="max-width:720px;margin-left:auto;margin-right:auto;margin-bottom:2rem;">
+            <strong>
+              Galway deserves better leadership. For clean air, clean water and clean politics
+              vote Niall Murphy.
+            </strong>
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-center mt-4">
+            <a href="#priorities" class="btn btn-primary btn-lg">My Priorities</a>
+            <a href="https://gofund.me/c194e26eb" class="btn btn-light btn-lg" target="_blank" rel="noopener">Donate to Campaign</a>
+            <a href="http://www.checktheregister.ie" class="btn btn-dark btn-lg" target="_blank" rel="noopener">Register to Vote</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRIORITIES SECTION -->
+  <section id="priorities" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-heading">My Three Priorities</h2>
+        <p class="lead">What I'll fight for in Dáil Éireann</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Priority 1: Public Transport -->
+        <div class="col-md-4">
+          <div class="priority-card">
+            <div class="priority-number">1</div>
+            <h3>Public Transport</h3>
+            <p>
+              Galway is gridlocked. We need GLUAS, more buses, and better trains to free up the city.
+            </p>
+            <p>
+              In Galway, public transport funding has stalled under this Government, and if elected I will fight to restore it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Priority 2: Cost of Living -->
+        <div class="col-md-4">
+          <div class="priority-card">
+            <div class="priority-number">2</div>
+            <h3>Cost of Living</h3>
+            <p>
+              The Energy Crisis is a Fossil Fuel Crisis. I will push for direct supports for the most vulnerable now.
+            </p>
+            <p>
+              We need more renewables and innovative solutions like plug in solar to get off fossil fuels so that this energy crisis is the last.
+            </p>
+          </div>
+        </div>
+
+        <!-- Priority 3: Community -->
+        <div class="col-md-4">
+          <div class="priority-card">
+            <div class="priority-number">3</div>
+            <h3>Community</h3>
+            <p>
+              Our communities deserve spaces to gather, celebrate, and play.
+            </p>
+            <p>
+              I will work for more sports facilities, community centers, and pedestrian areas in the city, continuing my work on Galway City Council.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5">
+          <img src="assets/images/niall_wide.avif" alt="Niall Murphy" class="profile-image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="section-heading">About Niall Murphy</h2>
+          <p class="lead">
+            I have lived and worked in Galway for the past thirty years as a software engineer for multinationals and medical device companies. I previously represented Galway City West as a city councillor for four years.
+          </p>
+          <p class="lead">
+            I live in Salthill with my wife Una. Our three children are now in their early twenties, and I see first-hand the life challenges faced by a new generation.
+          </p>
+          <p class="lead">
+            Outside of politics I am a runner and swimmer, and I have organised many cycling and running events in the city.
+          </p>
+
+          <div class="key-points">
+            <div class="key-point">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>4 years as Galway City Councillor</strong> representing City West</span>
+            </div>
+            <div class="key-point">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Board member of Leisureland</strong> and University of Galway</span>
+            </div>
+            <div class="key-point">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Community organizer</strong> for cycling, running events, and youth sports</span>
+            </div>
+            <div class="key-point">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Environmental campaigner</strong> for clean water in Galway Bay</span>
+            </div>
+            <div class="key-point">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>10 years as hurling coach</strong> for underage teams</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT SECTION -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="section-heading">Connect with Niall</h2>
+      <p class="lead mb-4">Follow the campaign and get in touch</p>
+
+      <div class="social-links justify-content-center">
+        <a href="https://www.facebook.com/niallgalway" class="social-link" target="_blank" rel="noopener">
+          <i class="bi bi-facebook"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="https://bsky.app/profile/niallgalway.bsky.social" class="social-link" target="_blank" rel="noopener">
+          <i class="bi bi-cloud"></i>
+          <span>Bluesky</span>
+        </a>
+        <a href="https://www.instagram.com/niallgalway/" class="social-link" target="_blank" rel="noopener">
+          <i class="bi bi-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.linkedin.com/in/niallgalway" class="social-link" target="_blank" rel="noopener">
+          <i class="bi bi-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="mailto:niall.murphy@galwaygreens.ie" class="social-link">
+          <i class="bi bi-envelope-fill"></i>
+          <span>Email</span>
+        </a>
+        <a href="tel:+353868399996" class="social-link">
+          <i class="bi bi-telephone-fill"></i>
+          <span>086 839 9996</span>
+        </a>
+      </div>
+
+      <div class="mt-5">
+        <h3 class="mb-3">Download Campaign Materials</h3>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+          <a href="assets/pdfs/commercial_flyer.pdf" class="btn btn-dark" target="_blank" rel="noopener">
+            <i class="bi bi-file-pdf"></i> Download Campaign Flyer
+          </a>
+          <a href="assets/pdfs/anpost_flyer.pdf" class="btn btn-dark" target="_blank" rel="noopener">
+            <i class="bi bi-file-pdf"></i> Download Priorities Leaflet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 class="mb-3">Ready to vote for a better Galway?</h2>
+      <p class="lead mb-4">
+        Make sure you're registered and support the campaign
+      </p>
+      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+        <a href="http://www.checktheregister.ie" class="btn btn-light btn-lg" target="_blank" rel="noopener">
+          Check if You're Registered
+        </a>
+        <a href="https://gofund.me/c194e26eb" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          Donate to Campaign
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="mb-2">
+        <strong>POLITICAL ADVERTISEMENT</strong> for Galway West Dáil Bye-Election 2026
+      </p>
+      <p class="mb-2">
+        Published by Niall Murphy, Green Party Ireland, 32 Nassau St, Dublin 2.
+      </p>
+      <p class="mb-3">
+        For more information see <a href="https://www.greenparty.ie/transparency" target="_blank" rel="noopener">www.greenparty.ie/transparency</a>
+      </p>
+      <p>
+        <a href="/">Return to Galway Green Party homepage</a>
+      </p>
+      <p class="mt-3">
+        <small>&copy; 2026 Galway Green Party. All rights reserved.</small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Event Tracking -->
+  <script>
+    // Track button clicks
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('a.btn');
+      if (!btn) return;
+
+      const href = btn.getAttribute('href') || '';
+      const text = btn.textContent.trim();
+
+      if (href.includes('gofund.me')) {
+        gtag('event', 'donate_click', {
+          'event_category': 'Campaign',
+          'event_label': 'Donate Button',
+          'value': text
+        });
+      } else if (href.includes('checktheregister.ie')) {
+        gtag('event', 'register_click', {
+          'event_category': 'Campaign',
+          'event_label': 'Register to Vote'
+        });
+      } else if (href.endsWith('.pdf')) {
+        gtag('event', 'pdf_download', {
+          'event_category': 'Campaign Materials',
+          'event_label': href
+        });
+      }
+    });
+
+    // Track social link clicks
+    document.querySelectorAll('.social-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        const platform = this.textContent.trim();
+        gtag('event', 'social_click', {
+          'event_category': 'Social Media',
+          'event_label': platform
+        });
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
