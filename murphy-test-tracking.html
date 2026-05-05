@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murphy PDF - Tracking Test</title>
+
+  <!-- Google Analytics tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEEFWG8P5D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PEEFWG8P5D');
+
+    // Track PDF clicks explicitly
+    function trackPDFClick(source) {
+      gtag('event', 'pdf_view', {
+        'event_category': 'PDF',
+        'event_label': source,
+        'value': 1
+      });
+      console.log('✅ Tracked PDF click from source:', source);
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2fb56a;
+    }
+    .test-section {
+      background: white;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .test-link {
+      display: block;
+      padding: 15px 25px;
+      background: #2fb56a;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px 0;
+      font-weight: 700;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .test-link:hover {
+      background: #0f8066;
+    }
+    .source-label {
+      display: inline-block;
+      background: #e7e7e5;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    .instructions {
+      background: #fff3cd;
+      padding: 15px;
+      border-left: 4px solid #ffc107;
+      margin: 20px 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Murphy PDF Tracking Test</h1>
+
+  <div class="instructions">
+    <strong>📊 How to verify tracking works:</strong>
+    <ol>
+      <li>Open your browser's Developer Console (F12 → Console tab)</li>
+      <li>Click any link below</li>
+      <li>You'll see a green "✅ Tracked PDF click from source: X" message</li>
+      <li>Within 24 hours, check Google Analytics for the traffic data</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h2>Test Links - Each Simulates a Different Ad Location</h2>
+
+    <div class="source-label">Source: Facebook</div>
+    <a href="murphy-redirect.html?source=facebook&utm_medium=social&utm_campaign=byeelection2026"
+       class="test-link"
+       target="_blank">
+      📘 Open PDF (Facebook Ad)
+    </a>
+
+    <div class="source-label">Source: Newspaper/Print</div>
+    <a href="murphy-redirect.html?source=print&utm_medium=newspaper&utm_campaign=byeelection2026"
+       class="test-link"
+       target="_blank">
+      📰 Open PDF (Print Ad)
+    </a>
+
+    <div class="source-label">Source: Instagram</div>
+    <a href="murphy-redirect.html?source=instagram&utm_medium=social&utm_campaign=byeelection2026"
+       class="test-link"
+       target="_blank">
+      📷 Open PDF (Instagram Ad)
+    </a>
+  </div>
+
+  <div class="test-section">
+    <h2>📈 Where to View Results in Google Analytics</h2>
+    <ol>
+      <li>Go to <a href="https://analytics.google.com" target="_blank">analytics.google.com</a></li>
+      <li>Select your property (niallgalway.github.io)</li>
+      <li><strong>Real-time view:</strong> Reports → Realtime → Overview (see clicks immediately)</li>
+      <li><strong>Event tracking:</strong> Reports → Engagement → Events → Look for "pdf_view"</li>
+      <li><strong>Traffic sources:</strong> Reports → Acquisition → Traffic acquisition → Filter by campaign "byeelection2026"</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h2>🔗 URLs for Your Ads (Use These!)</h2>
+    <p><strong>Facebook/Social:</strong></p>
+    <code>https://niallgalway.github.io/murphy-redirect.html?source=facebook</code>
+
+    <p style="margin-top: 15px;"><strong>Print/Newspaper:</strong></p>
+    <code>https://niallgalway.github.io/murphy-redirect.html?source=print</code>
+
+    <p style="margin-top: 15px;"><strong>Instagram:</strong></p>
+    <code>https://niallgalway.github.io/murphy-redirect.html?source=instagram</code>
+
+    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+      <strong>How it works:</strong> Each URL goes through a tracking page that logs the source in Google Analytics,
+      then automatically redirects to the PDF. Users see a brief "Loading..." screen (0.5 seconds) then get the PDF.
+    </p>
+  </div>
+
+  <div class="test-section" style="background: #e8f5e9;">
+    <h2>✅ Proof This Works</h2>
+    <p>Click any link above and watch your browser console. You should see:</p>
+    <ol>
+      <li>A green success message in the console</li>
+      <li>The PDF opens with the tracking parameters in the URL</li>
+      <li>Within minutes, the event appears in GA4 Realtime reports</li>
+      <li>Within 24 hours, full reports show source breakdown</li>
+    </ol>
+    <p><strong>Note:</strong> Google Analytics tracks the URL parameters automatically, so even if someone navigates directly to the tracked URL, it will be logged.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Campaign Flyer...</title>
+
+  <!-- Google Analytics tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEEFWG8P5D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PEEFWG8P5D');
+
+    // Get source from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('source') || urlParams.get('utm_source') || 'direct';
+    const medium = urlParams.get('utm_medium') || 'unknown';
+    const campaign = urlParams.get('utm_campaign') || 'byeelection2026';
+
+    // Track the PDF view with source information
+    gtag('event', 'murphy_pdf_view', {
+      'event_category': 'Campaign Material',
+      'event_label': source,
+      'ad_source': source,
+      'ad_medium': medium,
+      'campaign': campaign,
+      'value': 1
+    });
+
+    // Log to console for verification
+    console.log('✅ Tracked PDF view from source:', source);
+    console.log('Event sent to GA4:', {
+      source: source,
+      medium: medium,
+      campaign: campaign
+    });
+
+    // Redirect to PDF after brief delay (allow GA to send data)
+    setTimeout(function() {
+      window.location.href = 'murphy.pdf';
+    }, 500);
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #5cb574 0%, #4a9d62 100%);
+      color: white;
+    }
+    .loading {
+      text-align: center;
+    }
+    .spinner {
+      border: 4px solid rgba(255,255,255,0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div class="spinner"></div>
+    <h2>Loading Campaign Flyer...</h2>
+    <p>You'll be redirected in a moment</p>
+  </div>
+</body>
+</html>
