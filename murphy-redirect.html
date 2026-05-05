@@ -11,36 +11,37 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-PEEFWG8P5D');
 
     // Get source from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get('source') || urlParams.get('utm_source') || 'direct';
-    const medium = urlParams.get('utm_medium') || 'unknown';
+    const medium = urlParams.get('utm_medium') || 'newspaper';
     const campaign = urlParams.get('utm_campaign') || 'byeelection2026';
 
-    // Track the PDF view with source information
-    gtag('event', 'murphy_pdf_view', {
-      'event_category': 'Campaign Material',
-      'event_label': source,
-      'ad_source': source,
-      'ad_medium': medium,
+    // Configure GA with custom page path that includes source
+    gtag('config', 'G-PEEFWG8P5D', {
+      'page_path': '/murphy-redirect/' + source,
+      'page_title': 'Murphy PDF - ' + source.charAt(0).toUpperCase() + source.slice(1)
+    });
+
+    // Send custom event with source as a parameter
+    gtag('event', 'murphy_pdf_click', {
+      'source': source,
+      'medium': medium,
       'campaign': campaign,
-      'value': 1
+      'event_category': 'Campaign_Material',
+      'event_label': source
     });
 
     // Log to console for verification
-    console.log('✅ Tracked PDF view from source:', source);
-    console.log('Event sent to GA4:', {
-      source: source,
-      medium: medium,
-      campaign: campaign
-    });
+    console.log('✅ Tracked PDF click from source:', source);
+    console.log('GA4 page_path:', '/murphy-redirect/' + source);
+    console.log('GA4 event sent:', 'murphy_pdf_click');
 
-    // Redirect to PDF after brief delay (allow GA to send data)
+    // Redirect to PDF after delay (allow GA to send data)
     setTimeout(function() {
       window.location.href = 'murphy.pdf';
-    }, 500);
+    }, 800);
   </script>
 
   <style>

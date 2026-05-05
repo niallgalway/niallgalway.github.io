@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murphy Campaign - Newspaper Ad Tracking Test</title>
+
+  <!-- Google Analytics tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEEFWG8P5D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PEEFWG8P5D');
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2fb56a;
+      border-bottom: 3px solid #2fb56a;
+      padding-bottom: 10px;
+    }
+    .newspaper-section {
+      background: white;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-left: 6px solid #2fb56a;
+    }
+    .test-link {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #2fb56a;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      margin: 10px 10px 10px 0;
+    }
+    .test-link:hover {
+      background: #0f8066;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .url-box {
+      background: #f8f9fa;
+      border: 2px solid #dee2e6;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0;
+      font-family: monospace;
+      word-break: break-all;
+      font-size: 0.95rem;
+    }
+    .instructions {
+      background: #d1ecf1;
+      border-left: 4px solid #0c5460;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .success {
+      background: #d4edda;
+      border-left: 4px solid #28a745;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #2fb56a;
+      color: white;
+      font-weight: 700;
+    }
+    tr:hover {
+      background: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>📰 Murphy Campaign - Newspaper Ad Tracking</h1>
+
+  <div class="instructions">
+    <h3>🎯 How to Verify Tracking Works:</h3>
+    <ol>
+      <li><strong>Open Browser Console:</strong> Press F12, go to "Console" tab</li>
+      <li><strong>Click a test link below</strong></li>
+      <li><strong>Watch for:</strong> Green ✅ message in console + brief loading screen + PDF opens</li>
+      <li><strong>Check GA4:</strong> Go to analytics.google.com → Reports → Realtime → look for "murphy_pdf_view" event</li>
+    </ol>
+  </div>
+
+  <!-- Advertiser Section -->
+  <div class="newspaper-section">
+    <h2>📰 Galway Advertiser</h2>
+
+    <p><strong>Use this URL in your Advertiser ad:</strong></p>
+    <div class="url-box">
+      https://galwaygreens.ie/murphy-redirect.html?source=advertiser
+    </div>
+
+    <a href="https://galwaygreens.ie/murphy-redirect.html?source=advertiser"
+       class="test-link"
+       target="_blank">
+      🧪 TEST ADVERTISER LINK
+    </a>
+
+    <div class="success">
+      <strong>What you should see in GA4:</strong><br>
+      Event: murphy_pdf_view<br>
+      Source: advertiser
+    </div>
+  </div>
+
+  <!-- Tribune Section -->
+  <div class="newspaper-section">
+    <h2>📰 Galway Tribune</h2>
+
+    <p><strong>Use this URL in your Tribune ad:</strong></p>
+    <div class="url-box">
+      https://galwaygreens.ie/murphy-redirect.html?source=tribune
+    </div>
+
+    <a href="https://galwaygreens.ie/murphy-redirect.html?source=tribune"
+       class="test-link"
+       target="_blank">
+      🧪 TEST TRIBUNE LINK
+    </a>
+
+    <div class="success">
+      <strong>What you should see in GA4:</strong><br>
+      Event: murphy_pdf_view<br>
+      Source: tribune
+    </div>
+  </div>
+
+  <!-- QR Code Section -->
+  <div class="newspaper-section">
+    <h2>📱 QR Codes for Print Ads</h2>
+    <p>Generate QR codes at <a href="https://www.qr-code-generator.com" target="_blank">qr-code-generator.com</a></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Newspaper</th>
+          <th>QR Code URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Advertiser</strong></td>
+          <td><code>https://galwaygreens.ie/murphy-redirect.html?source=advertiser</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tribune</strong></td>
+          <td><code>https://galwaygreens.ie/murphy-redirect.html?source=tribune</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Results Section -->
+  <div class="newspaper-section">
+    <h2>📊 How to Check Results in Google Analytics</h2>
+
+    <h3>Real-time (Within Seconds):</h3>
+    <ol>
+      <li>Go to <a href="https://analytics.google.com" target="_blank">analytics.google.com</a></li>
+      <li>Reports → Realtime → Overview</li>
+      <li>Click a test link above</li>
+      <li>Watch it appear in real-time!</li>
+    </ol>
+
+    <h3>Full Reports (After 24 hours):</h3>
+
+    <p><strong>Option 1 - Pages Report (EASIEST):</strong></p>
+    <ol>
+      <li>Reports → Engagement → Pages and screens</li>
+      <li>Search for "murphy-redirect"</li>
+      <li>You'll see TWO separate entries:
+        <ul>
+          <li><code>/murphy-redirect/advertiser</code> - X views</li>
+          <li><code>/murphy-redirect/tribune</code> - Y views</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p><strong>Option 2 - Events Report:</strong></p>
+    <ol>
+      <li>Reports → Engagement → Events</li>
+      <li>Find event: <strong>murphy_pdf_click</strong></li>
+      <li>Click on the event name</li>
+      <li>Look for the "source" parameter to see breakdown</li>
+    </ol>
+
+    <h3>Compare Performance:</h3>
+    <p>After the ads run, you'll see exactly which newspaper drove more traffic. Each source shows as its own "page" in GA4:</p>
+    <table style="width: auto; margin: 15px 0;">
+      <tr>
+        <th>Page Path</th>
+        <th>Newspaper</th>
+        <th>Views</th>
+      </tr>
+      <tr>
+        <td><code>/murphy-redirect/advertiser</code></td>
+        <td>Galway Advertiser</td>
+        <td>X clicks</td>
+      </tr>
+      <tr>
+        <td><code>/murphy-redirect/tribune</code></td>
+        <td>Galway Tribune</td>
+        <td>Y clicks</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
