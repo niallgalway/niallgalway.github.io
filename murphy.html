@@ -326,6 +326,41 @@
   footer a:hover {
     text-decoration: underline;
   }
+
+  /* Cards */
+  .card {
+    border: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 260px;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    margin: 0;
+    font-weight: 800;
+    color: var(--black);
+  }
+
+  /* Featured press release */
+  #press .featured-press .card {
+    border: 2px solid var(--evergreen);
+    box-shadow: 0 10px 30px rgba(47,181,106,.15);
+  }
   </style>
 </head>
 <body>
@@ -464,6 +499,235 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="press" class="py-5 bg-light">
+    <div class="container centered-content text-center">
+      <h2 class="section-heading">Latest news &amp; press releases</h2>
+      <p class="lead">
+        Statements, submissions, and local updates from Galway Greens.
+      </p>
+
+      <div class="row g-4 text-start mt-4">
+
+        <!-- GLUAS -->
+        <div class="col-lg-3 col-md-6 featured-press">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                A Strong Green Vote will Force Action on GLUAS says Murphy
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/gluas1.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carbon Tax -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Farmers and those in Fuel Poverty will Suffer from Drop in Carbon Tax
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/carbon_tax.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ring Road Granted -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Ring road approved, Galway deserves more than just another road
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/ring_road_granted_edited.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leisureland -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Leisureland must be protected as a vital public amenity
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/leisureland.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oil price -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Rising oil prices show need for energy independence
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/oilprice.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heavy rainfall and flooding -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Galway needs urgent action on flooding after heavy rainfall</h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="./assets/pdfs/rain.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Neutrality -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Ireland's neutrality must be protected</h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="./assets/pdfs/neutrality.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bus Delay -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Bus delays are hurting Galway commuters</h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="./assets/pdfs/bus_delay.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaving Twitter -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Leaving Twitter</h5>
+              <p class="mt-2 mb-3">Statement (PDF)</p>
+              <a href="./assets/pdfs/Leaving_Twitter.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Niall Murphy -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Niall Murphy to run in the Galway West Bye-Election
+              </h5>
+              <p class="mt-2 mb-3">Press release (PDF)</p>
+              <a href="assets/pdfs/to-run.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ring Road Submission -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                What Does the Ring Road Submission Say?
+              </h5>
+              <p class="mt-2 mb-3">Submission summary (PDF)</p>
+              <a href="assets/pdfs/rr1.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corrib Causeway -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                Corrib Causeway plans need to consider dyke condition
+              </h5>
+              <p class="mt-2 mb-3">Flood risk &amp; planning (PDF)</p>
+              <a href="assets/pdfs/dykerd.pdf"
+                 class="btn btn-primary btn-sm"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="mt-4">
+        <a href="mailto:galway@greenparty.ie" class="btn btn-dark">
+          Get in touch
+        </a>
+      </div> -->
     </div>
   </section>
 
