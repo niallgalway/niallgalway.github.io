@@ -26,6 +26,7 @@
     --black: #000000;
     --dark-grey: #403f3b;
     --light-grey: #e7e7e5;
+    --light-green: #e8f4ed;
     --white: #ffffff;
 
     /* Layout + UI */
@@ -107,58 +108,16 @@
 
   .centered-content { max-width: 1040px; }
 
-  /* Hero: brand overlay */
+  /* Hero: brand overlay with trees image */
   .hero-section {
     background: linear-gradient(
-        rgba(0,0,0,0.62),
-        rgba(0,0,0,0.62)
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
       ),
-      url("assets/images/fullpartysupport.jpeg") center/cover no-repeat;
+      url("assets/images/trees.avif") center/cover no-repeat;
 
-    min-height: 90vh;
+    min-height: 88vh;
     color: white;
-  }
-
-  @media (max-width: 767px) {
-    .hero-section {
-      background: url("assets/images/trees.avif") center/cover no-repeat;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .hero-poster {
-      max-height: 660px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    /* move poster left */
-    .hero-poster-wrapper {
-      transform: translateX(-140px);
-    }
-
-    /* move text + buttons right */
-    .hero-section .col-lg-6:last-child {
-      transform: translateX(60px);
-    }
-  }
-
-  @media (max-width: 767px) {
-    .hero-poster-wrapper {
-      display: none;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .hero-section .row {
-      margin-top: 0;
-    }
-  }
-
-  .hero-poster {
-    max-height: 620px;
-    border-radius: 2px;
-    display: block;
   }
 
   .hero-title {
@@ -166,36 +125,6 @@
       0 4px 6px rgba(0,0,0,0.8),
       0 8px 14px rgba(0,0,0,0.6);
   }
-
-  .hero-poster-wrapper {
-    display: inline-block;
-    background: white;
-    padding: 1px;
-    border-radius: 4px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-  }
-
-
-  .hero-poster-wrapper {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .hero-poster-wrapper:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 50px rgba(0,0,0,0.45);
-  }
-
-  /* Hero with tree background for in-between campaigns */
-  /*.hero-section {
-    min-height: 88vh;
-    display: flex;
-    align-items: center;
-    color: var(--white);
-    background:
-      linear-gradient(180deg, rgba(15,128,102,.78), rgba(15,128,102,.55)),
-      url('assets/images/trees.avif') no-repeat center / cover;
-    position: relative;
-  }*/
 
   .hero-section h1 {
     color: var(--white);
@@ -387,6 +316,13 @@
     outline-offset: 3px;
     border-radius: 8px;
   }
+
+  /* Subtle green-tinted background for alternating sections */
+  .bg-light-green {
+    background: var(--light-green) !important;
+    border-top: 1px solid rgba(47,181,106,.15);
+    border-bottom: 1px solid rgba(47,181,106,.15);
+  }
 </style>
 
 </head>
@@ -409,7 +345,6 @@
           <li class="nav-item"><a class="nav-link" href="#representatives">Representatives</a></li>
           <li class="nav-item"><a class="nav-link" href="#vote">Register to vote</a></li>
           <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contribute">Contribute</a></li>
           <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
         </ul>
       </div>
@@ -420,69 +355,22 @@
   <!-- HERO -->
   <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
     <div class="container centered-content">
+      <h1 class="display-4 fw-bold hero-title">Green Party Galway</h1>
+      <p class="lead mt-3 hero-title">
+        Working for a sustainable, just, and prosperous future for Galway and Ireland.
+      </p>
 
-
-
-      <div class="row align-items-center mt-4">
-
-        <!-- Poster -->
-        <div class="col-lg-6 text-center mb-4 mb-lg-0">
-          <div class="hero-poster-wrapper">
-            <img src="assets/images/poster.jpeg"
-                 class="img-fluid hero-poster"
-                 alt="Niall Murphy campaign poster">
-          </div>
-        </div>
-
-        <!-- Quote + Buttons -->
-        <div class="col-lg-6 text-center text-lg-start">
-
-          <h1 class="display-2 fw-bold hero-title text-center">Green Party Galway</h1>
-
-          <p class="lead hero-title" style="max-width:720px;margin-left:auto;margin-right:auto;">
-            <strong>
-              "Galway deserves better leadership. For clean air, clean water and clean politics,
-              vote Niall Murphy."
-            </strong>
-          </p>
-
-          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-4">
-            <a href="#vote" class="btn btn-light btn-lg">Register to vote</a>
-            <a href="#membership" class="btn btn-primary btn-lg">Join the party</a>
-            <a href="https://gofund.me/c194e26eb"
-               class="btn btn-dark btn-lg"
-               target="_blank"
-               rel="noopener">
-              Donate to Niall's Campaign
-            </a>
-          </div>
-
-        </div>
-
+      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mt-4">
+        <a href="#vote" class="btn btn-light btn-lg">Register to vote</a>
+        <a href="#membership" class="btn btn-primary btn-lg">Join the party</a>
+        <a href="#press" class="btn btn-dark btn-lg">Press releases</a>
       </div>
 
+      <!-- <p class="mt-4 small hero-title" style="opacity:.9;">
+        The Galway Greens group covers both city and county and usually meet on the first Monday of the month.
+      </p> -->
     </div>
   </section>
-
-  <!-- HERO for in between campaigns-->
-  <!--   <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
-      <div class="container centered-content">
-        <h1 class="display-4 fw-bold">Green Party Galway</h1>
-        <p class="lead mt-3">
-          Working for a sustainable, just, and prosperous future for Galway and Ireland.
-        </p>
-
-        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mt-4">
-          <a href="#vote" class="btn btn-light btn-lg">Register to vote</a>
-          <a href="#membership" class="btn btn-primary btn-lg">Join the party</a>
-          <a href="#press" class="btn btn-dark btn-lg">Press releases</a>
-        </div>
-
-        <p class="mt-4 small" style="opacity:.9;">
-          The Galway Greens group covers both city and county and usually meet on the first Monday of the month.
-        </p>
-      </div>
-    </section> -->
 
   <!-- ABOUT -->
   <section id="about" class="py-5">
@@ -503,10 +391,10 @@
   </section>
 
   <!-- IMPACT -->
-  <section id="impact" class="py-5 bg-light">
+  <section id="impact" class="py-5 bg-light-green">
     <div class="container centered-content">
       <div class="text-center">
-        <h2 class="section-heading">Our impact</h2>
+        <h2 class="section-heading">Our Impact</h2>
         <p class="lead">
           As representatives of Galway's diverse communities, we have successfully championed environmental protection measures,
           sustainable transport initiatives, and social justice policies that benefit all residents.
@@ -567,42 +455,6 @@
               </h5>
               <p class="mt-2 mb-3">Press release (PDF)</p>
               <a href="assets/pdfs/b_bus.pdf"
-                 class="btn btn-primary btn-sm"
-                 target="_blank"
-                 rel="noopener">
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GLUAS -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
-                A Strong Green Vote will Force Action on GLUAS says Murphy
-              </h5>
-              <p class="mt-2 mb-3">Press release (PDF)</p>
-              <a href="assets/pdfs/gluas1.pdf"
-                 class="btn btn-primary btn-sm"
-                 target="_blank"
-                 rel="noopener">
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Carbon Tax -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
-                Farmers and those in Fuel Poverty will Suffer from Drop in Carbon Tax
-              </h5>
-              <p class="mt-2 mb-3">Press release (PDF)</p>
-              <a href="assets/pdfs/carbon_tax.pdf"
                  class="btn btn-primary btn-sm"
                  target="_blank"
                  rel="noopener">
@@ -715,58 +567,6 @@
           </div>
         </div>
 
-        <!-- Leaving Twitter -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Leaving Twitter</h5>
-              <p class="mt-2 mb-3">Statement (PDF)</p>
-              <a href="./assets/pdfs/Leaving_Twitter.pdf"
-                 class="btn btn-primary btn-sm"
-                 target="_blank"
-                 rel="noopener">
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Niall Murphy -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
-                Niall Murphy to run in the Galway West Bye-Election
-              </h5>
-              <p class="mt-2 mb-3">Press release (PDF)</p>
-              <a href="assets/pdfs/to-run.pdf"
-                 class="btn btn-primary btn-sm"
-                 target="_blank"
-                 rel="noopener">
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ring Road Submission -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
-                What Does the Ring Road Submission Say?
-              </h5>
-              <p class="mt-2 mb-3">Submission summary (PDF)</p>
-              <a href="assets/pdfs/rr1.pdf"
-                 class="btn btn-primary btn-sm"
-                 target="_blank"
-                 rel="noopener">
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-
         <!-- Corrib Causeway -->
         <div class="col-lg-3 col-md-6">
           <div class="card h-100">
@@ -799,7 +599,7 @@
   <!-- REPRESENTATIVES -->
   <section id="representatives" class="py-5 bg-soft-pink text-center">
     <div class="container">
-      <h2 class="section-heading">Our representatives</h2>
+      <h2 class="section-heading">Our Representatives</h2>
       <p class="lead mb-5">
         Contact your local Greens — city and county.
       </p>
@@ -812,7 +612,7 @@
             <div class="card-body">
               <h5 class="card-title">Niall Murphy</h5>
               <p class="mb-2">Galway City West</p>
-              <p class="small mb-3">
+              <p class="small mb-0">
                 <strong>Email:</strong> <a href="mailto:niall.murphy@galwaygreens.ie">niall.murphy@galwaygreens.ie</a><br>
                 <strong>Phone:</strong> 086 8399996<br>
                 <strong>Facebook:</strong> <a href="https://www.facebook.com/niallgalway" target="_blank" rel="noopener">niallgalway</a><br>
@@ -820,10 +620,6 @@
                 <strong>Instagram:</strong> <a href="https://www.instagram.com/niallgalway/" target="_blank" rel="noopener">niallgalway</a><br>
                 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/niallgalway" target="_blank" rel="noopener">niallgalway</a>
               </p>
-              <div class="d-grid gap-2">
-                <a href="#candidate" class="btn btn-primary btn-sm">Candidate profile</a>
-                <a href="https://gofund.me/c194e26eb" class="btn btn-dark btn-sm" target="_blank" rel="noopener">Donate</a>
-              </div>
             </div>
           </div>
         </div>
@@ -913,7 +709,7 @@
   </section>
 
   <!-- MEMBERSHIP -->
-  <section id="membership" class="py-5 bg-light">
+  <section id="membership" class="py-5 bg-light-green">
     <div class="container centered-content text-center">
       <h2 class="section-heading">Membership</h2>
       <p class="lead">
@@ -926,8 +722,8 @@
     </div>
   </section>
 
-  <!-- CONTRIBUTIONS -->
-  <section id="contribute" class="py-5">
+  <!-- CAMPAIGN SECTION: CONTRIBUTIONS -->
+  <!-- <section id="contribute" class="py-5">
     <div class="container centered-content text-center">
       <h2 class="section-heading">Financial contribution</h2>
       <p class="lead">
@@ -936,10 +732,10 @@
       </p>
       <a href="contribute.html" class="btn btn-dark btn-lg mt-3" target="_blank" rel="noopener">Make a contribution</a>
     </div>
-  </section>
+  </section> -->
 
-  <!-- CANDIDATE DETAIL (section now; can become its own page later) -->
-  <section id="candidate" class="py-5 bg-light">
+  <!-- CAMPAIGN SECTION: CANDIDATE DETAIL (section now; can become its own page later) -->
+  <!-- <section id="candidate" class="py-5 bg-light">
     <div class="container centered-content">
       <div class="row g-4 align-items-center">
         <div class="col-md-5">
@@ -967,23 +763,10 @@
 
             Outside of politics I am a runner and swimmer, and I have organised many cycling and running events in the city. Ten years as a hurling coach for underage teams has given me insight into the sports infrastructure needs for Galway.
           </p>
-
-          <!-- <hr class="spacer-divider">
-
-          <h3 class="mb-3">Featured press release</h3>
-          <p class="mb-3">
-            <a href="http://www.galwaygreens.ie/docs/to-run.pdf" target="_blank" rel="noopener">
-              Niall Murphy to run in the Galway West Bye-Election (PDF)
-            </a>
-          </p> -->
-
-<!--           <p class="mb-0">
-            Next iteration: add “Key priorities” bullets and a short “Track record” list from the candidate’s approved copy.
-          </p> -->
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- CONTACT (commenting out for now as no one in charge of social media and press email not monitored) -->
   <!-- <section id="contact" class="py-5 text-center">
